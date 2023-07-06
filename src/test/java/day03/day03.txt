@@ -1,0 +1,67 @@
+
+C01_GetRequest
+***  TC01: Print the Response that returns when we send a GET request
+     to https://reqres.in/api/users/
+
+C02_GetRequest
+***  TC02: Send a GET request to https://restful-booker.herokuapp.com/booking/10
+     and verify:
+     The status code is 200 ;
+     The content type is application/json; Charset=utf-8
+     The value of Header named Server is Cowboy
+     The status line is HTTP/1.1 200 ok
+
+C03_GetRequest
+***  TC03:Send a GET request to https://reqres.in/api/users/2
+     and verify:
+     The status code is 200 ;
+     The content type is application/json; Charset=utf-8
+     The value of Header named Server is cloudflare
+     The status line is HTTP/1.1 200 ok
+
+     Note: We can test all headers via Assert.assertEqual and response.then().assertThat()
+     but to test one by one like Assert.assertEquals(200,response.statusCode()); in the C02_GetRequest is not good approach
+     We can test only informations of header both
+
+
+C04_GetRequest (we started to use Matchers Class to verify all data within json body)
+*** TC04:Send a GET Request to https://restful-booker.herokuapp.com/booking/125
+    and verify:
+    The status code is 200
+    The content type is application/json; Charset=utf-8
+    firstname is John
+    lastname is Smith
+    totalprice is 111
+    depositpaid is true
+    bookingdates (checkin) is 2018-01-01
+    bookingdates (checout) is 2019-01-01
+
+    {
+       "firstname": "John",
+        "lastname": "Smith",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    }
+
+*** TC05:Send a GET Request to https://restful-booker.herokuapp.com/booking/525
+    and verify:
+    The status code is 200
+    The content type is application/json; Charset=utf-8
+{
+    "firstname": "Josh",
+    "lastname": "Allen",
+    "totalprice": 111,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+    },
+    "additionalneeds": "super bowls"
+}
+
+

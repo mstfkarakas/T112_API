@@ -1,0 +1,14 @@
+
+*** TC09:Send a GET Request to https://reqres.in/api/users
+              and verify:
+              The status code is 200
+              The content type is application/json; Charset=utf-8
+              and verify the "George" is exist in the names list
+
+
+
+*** TC10:Send a GET Request to https://reqres.in/api/users
+              and verify:
+              The status code is 200
+              The content type is application/json; Charset=utf-8
+              and verify the "charles.morris@reqres.in" email is exist in the emails list
