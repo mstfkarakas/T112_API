@@ -7,17 +7,16 @@ public class BaseUrl {
         String url = "https://reqres.in/api/users";
         return url;
     }
+
     public static String reqresInUserID(int id) {
-        String url = "https://reqres.in/api/users/"+id;
+        String url = "https://reqres.in/api/users/" + id;
         return url;
     }
 
     public static String herokuappBookingID(int id) {
-        String url = "https://restful-booker.herokuapp.com/booking/"+id;
+        String url = "https://restful-booker.herokuapp.com/booking/" + id;
         return url;
     }
-
-
 
 
 }

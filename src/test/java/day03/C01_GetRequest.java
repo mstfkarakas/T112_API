@@ -28,7 +28,7 @@ public class C01_GetRequest {
         String url = "https://reqres.in/api/users/";
         Response response = given().when().get(url);
 
-        //Print the response
+        // Print the response
         // response.print(); // not useful
         // response.prettyPrint(); // it brings only data with json body
         //  response.prettyPeek(); // it brings all data and informations of header

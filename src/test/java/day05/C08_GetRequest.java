@@ -9,8 +9,7 @@ import utilities.BaseUrl;
 import static io.restassured.RestAssured.given;
 
 public class C08_GetRequest {
-    // we can call static methods with their class name or without class name
-    // both of them true
+    // we can call static methods with or without class name, so BaseUrl.reqresInUsers() or reqresInUsers()
     static Response response = given().when().get(BaseUrl.reqresInUsers());
     static JsonPath jsonPath = response.jsonPath();
 
@@ -43,7 +42,7 @@ public class C08_GetRequest {
     public void specificDataPrint(){
         System.out.println(jsonPath.getString("data[2].email"));
         System.out.println(jsonPath.getString("data.email[2]"));
-        // lets print the first 5 emails
+        // let's print the first 5 emails
         System.out.println(jsonPath.getString("data.email[0,1,2,3,4]"));
         // last email
         System.out.println(jsonPath.getString("data.email[-1]"));

@@ -1,9 +1,10 @@
 package utilities;
 
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -11,11 +12,11 @@ import static org.hamcrest.Matchers.equalTo;
 public class ApiCalls {
 
 
-     // we will create a dynamic method for Response
+    // we will create a dynamic method for Response
     // This method will return response, and we use with Matchers Class
     // This method for  https://reqres.in/api/users
-    public static Response checkUserExistWithID(int id,int statuscode,String email
-    ,String first_name, String last_name){
+
+    public static Response checkUserExistWithID(int id,int statuscode,String email ,String first_name, String last_name){
 
         Response response = given().when().get(BaseUrl.reqresInUserID(id));
         response.then()
@@ -53,6 +54,7 @@ public class ApiCalls {
                 .assertThat()
                 .statusCode(statuscode)
                 .contentType("application/json; Charset=utf-8");
+
         JsonPath jsonPath = response.jsonPath();
 
         Assert.assertEquals(email,jsonPath.getString("data.email"));
@@ -72,10 +74,7 @@ public class ApiCalls {
         JsonPath jsonPath = response.jsonPath();
         Assert.assertTrue(jsonPath.getList("data.first_name").contains(name));
         return response ;
+
     }
-
-
-
-
 
 }
