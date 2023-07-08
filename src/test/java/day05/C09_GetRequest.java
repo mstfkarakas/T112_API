@@ -1,11 +1,13 @@
 package day05;
 
 import org.junit.Test;
+import utilities.ApiCalls;
 
 import static utilities.ApiCalls.*;
 
 public class C09_GetRequest {
 
+//  ApiCalls apiCalls = new ApiCalls();  // ApiCalls class'indaki checkUserExistWithID method'unu static yapmak yerine boyle de cagirabiliriz.
 
     @Test
     public void id5IsExistInReqres() {
@@ -36,7 +38,5 @@ public class C09_GetRequest {
     public void nameExistReqresIn() {
         allNameListReqresIn(200, "Janet");
     }
-
-
 
 }

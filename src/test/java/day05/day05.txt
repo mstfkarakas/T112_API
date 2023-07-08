@@ -12,3 +12,18 @@
               The status code is 200
               The content type is application/json; Charset=utf-8
               and verify the "charles.morris@reqres.in" email is exist in the emails list
+
+
+
+
+{
+    "firstname": "Jim",
+    "lastname": "Brown",
+    "totalprice": 111,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Breakfast"
+}
